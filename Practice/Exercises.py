@@ -103,12 +103,88 @@ def string_lists():
 
 
 def list_comprehension():
-    a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+    a = [rand for x in range(random.randint(1,50))]
 
-    even = [num % 2 is 0 for num in a]
+    print(a)
+
+    even = [num for num in a if num % 2 == 0]
 
     print(even)
 
 
+def rock_paper_scissors():
+    r_p_s = {"rock" : 1, "paper" : 2, "scissors" : 3}
 
-list_comprehension()
+    print(r_p_s)
+
+    player1 = int(input("Player 1, enter the number of your choice: "))
+    player2 = int(input("Player 2, enter the number of your choice: "))
+
+    #god this is ugly
+    if player1 is 1:
+        if player2 is 1:
+            print("It's a tie!")
+        if player2 is 2:
+            print("Player 2 wins!")
+        if player2 is 3:
+            print("Player 1 wins!")
+
+    elif player1 is 2:
+        if player2 is 1:
+            print("Player 1 wins!")
+        if player2 is 2:
+            print("It's a tie!")
+        if player2 is 3:
+            print("Player 2 wins!")
+
+    elif player1 is 3:
+        if player2 is 1:
+            print("Player 2 wins!")
+        if player2 is 2:
+            print("Player 1 wins!")
+        if player2 is 3:
+            print("It's a tie!")
+
+    else:
+        print("This game is broken")
+
+
+def guessing_game_1():
+    print("Welcome to the Guessing Game Part 1!")
+
+    def game_guess():
+
+        ans = random.randint(1, 10)
+        user = 0
+
+        while user is not ans:
+
+
+            user = input("Now enter your guess: ")
+
+            if int(user) > ans:
+                print("Your guess is too high. (Enter 'exit' to quit")
+                user = user
+
+            elif int(user) < ans:
+                print("Your guess is too low. (Enter 'exit' to quit")
+                user = user
+
+            elif user == 'exit':
+                break
+
+            else:
+                print("That's correct!")
+                again = input("Would you like to play again? y/n: ")
+
+                if again is 'y':
+                    game_guess()
+                else:
+                    print("Thanks for playing.")
+                    break
+
+    game_guess()
+
+
+
+guessing_game_1()
