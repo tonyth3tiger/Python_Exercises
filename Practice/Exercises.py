@@ -149,7 +149,7 @@ def rock_paper_scissors():
         print("This game is broken")
 
 
-def guessing_game_1():
+def guessing_game_1():### User guesses a number
     print("Welcome to the Guessing Game Part 1!")
 
     def game_guess():
@@ -157,34 +157,34 @@ def guessing_game_1():
         ans = random.randint(1, 10)
         user = 0
 
-        while user is not ans:
+        while user != ans and user != 'exit':
 
 
             user = input("Now enter your guess: ")
 
+            if user == 'exit':
+                break
+
+            user = int(user)
+
             if int(user) > ans:
                 print("Your guess is too high. (Enter 'exit' to quit")
-                user = user
 
             elif int(user) < ans:
                 print("Your guess is too low. (Enter 'exit' to quit")
-                user = user
 
-            elif user == 'exit':
-                break
-
-            else:
+            elif int(user) == ans:
                 print("That's correct!")
                 again = input("Would you like to play again? y/n: ")
 
                 if again is 'y':
                     game_guess()
-                else:
+                elif again is 'n':
                     print("Thanks for playing.")
                     break
 
     game_guess()
 
 
-
-guessing_game_1()
+def list_overlap():
+    
