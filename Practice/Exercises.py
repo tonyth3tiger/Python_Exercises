@@ -209,4 +209,4 @@ def primality_func():
         print(num + " is not a prime number.")
 
 
-primality_func()
+
