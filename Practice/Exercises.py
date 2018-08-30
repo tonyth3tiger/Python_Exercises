@@ -156,11 +156,12 @@ def guessing_game_1():### User guesses a number
 
         ans = random.randint(1, 10)
         user = 0
-
+        count = 0
         while user != ans and user != 'exit':
 
 
             user = input("Now enter your guess: ")
+            count += 1
 
             if user == 'exit':
                 break
@@ -174,7 +175,7 @@ def guessing_game_1():### User guesses a number
                 print("Your guess is too low. (Enter 'exit' to quit")
 
             elif int(user) == ans:
-                print("That's correct!")
+                print("That's correct! It took you " + str(count) + " tries.")
                 again = input("Would you like to play again? y/n: ")
 
                 if again is 'y':
@@ -186,5 +187,26 @@ def guessing_game_1():### User guesses a number
     game_guess()
 
 
-def list_overlap():
-    
+def list_overlap():###finds the same number in 2 sets without duplicates
+    a = random.sample(range(1,50), 12)
+    b = random.sample(range(1,50), 16)
+
+    print(set(a) & set(b))
+
+
+def primality_func():
+    num = input("Enter a number: ")
+    div = range(1, int(num) + 1)
+    fin = []
+    for ans in div:
+        if int(num) % ans is 0:
+            fin.append(ans)
+
+    if len(fin) == 2:
+        print(num + " is a prime number.")
+
+    else:
+        print(num + " is not a prime number.")
+
+
+primality_func()
