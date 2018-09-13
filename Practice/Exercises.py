@@ -103,7 +103,7 @@ def string_lists():
 
 
 def list_comprehension():
-    a = [rand for x in range(random.randint(1,50))]
+    a = random.sample(range(100), 20)
 
     print(a)
 
@@ -210,3 +210,30 @@ def primality_func():
 
 
 
+def list_ends():
+    a = random.sample(range(50), 50)
+    print(a)
+    first_last = [a[0], a[-1]]
+    print(first_last)
+
+
+def fibonacci():
+
+    def parser(string):
+        for n in string.split():
+            return n
+
+    par = parser(input("Enter a sequence of numbers separated by a space between each number: "))
+    print(par)
+    for a in par:
+        if a.index(self) is 0 or 1:
+            print(a)
+        else:
+            print(a.index-1 + a.index-2)
+
+
+
+
+
+
+fibonacci()
