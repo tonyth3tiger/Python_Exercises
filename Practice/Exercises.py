@@ -219,21 +219,11 @@ def list_ends():
 
 def fibonacci():
 
-    def parser(string):
-        for n in string.split():
-            return n
+    par1 = int(input("Enter a number: "))
+    par2 = int(input("Enter another number: "))
+    cycles = int(input("How many iterations do you want: "))
 
-    par = parser(input("Enter a sequence of numbers separated by a space between each number: "))
-    print(par)
-    for a in par:
-        if a.index(self) is 0 or 1:
-            print(a)
-        else:
-            print(a.index-1 + a.index-2)
-
-
-
-
-
+    def fib(par1,par2,cycles):
+        
 
 fibonacci()
